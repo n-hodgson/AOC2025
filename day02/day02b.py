@@ -1,5 +1,3 @@
-import math
-
 def get_input(fname):
 
     with open(fname, 'r') as fid:
@@ -20,7 +18,7 @@ def has_duplicates(s):
     if i == 1:
         return False
     
-    # for sequences were all numbers are the same
+    # for sequences where all numbers are the same
     # such as 99, 11 or 11111111 then they are automatically 
     # invalid
     if len(set(s)) == 1:
@@ -55,8 +53,6 @@ def solve(ids):
         d = check_range(id[0], id[1])
         if d != []:
             invalid_ids.extend(d)
-            if len(invalid_ids) == 331:
-                print(id)
 
     return sum(invalid_ids), invalid_ids
 
@@ -71,6 +67,6 @@ if __name__=='__main__':
         sys.exit(1)
   
     ids = get_input(fname)
-    ans, invalid_ids_nh = solve(ids)
+    ans, invalid_ids = solve(ids)
 
     print(f'The sum of invalid IDs: {ans}')

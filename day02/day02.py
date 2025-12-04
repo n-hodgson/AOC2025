@@ -48,4 +48,4 @@ if __name__=='__main__':
     ids = get_input(fname)
     ans = solve(ids)
 
-    print(f'The some of invalid IDs: {ans}')
+    print(f'The sum of invalid IDs: {ans}')
