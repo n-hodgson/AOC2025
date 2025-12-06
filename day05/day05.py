@@ -17,8 +17,16 @@ def get_input(fname):
     return fresh_ranges, available
 
 
-def solve(grid):
-    pass
+def solve(fresh_ranges, available):
+    is_fresh = []
+    for a in available:
+        for r in fresh_ranges:
+            if a in range(r[0], r[1]+1):
+                is_fresh.append(a)
+                break
+
+    return len(is_fresh), is_fresh
+
 
 
 if __name__=='__main__':
@@ -32,4 +40,8 @@ if __name__=='__main__':
         sys.exit(1)
   
     fresh_ranges, available = get_input(fname)
+
+    ans, is_fresh = solve(fresh_ranges, available)
+
+    print(f'The number of available fresh ingredients is {ans}')
 
