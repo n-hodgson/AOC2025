@@ -11,7 +11,7 @@ def find_max(s, start=0, seqlen=12):
     start = 0 
 
     for i in range(seqlen):
-        maxnum = float('inf')
+        maxnum = -1
         end = (n - seqlen + 1) + i
         for j in range(start, end):
             if s[j] > maxnum:
